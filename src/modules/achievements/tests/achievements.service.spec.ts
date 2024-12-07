@@ -47,7 +47,9 @@ describe('AchievementsService', () => {
     expect(repository.getAchievementsData).toHaveBeenCalled();
     expect(result).toHaveProperty('count');
     expect(result).toHaveProperty('achievements');
-    expect(result['achievements'].length).toEqual(result['count']);
+    expect(result['count']).toEqual(
+      result['achievements'].map(({ count }) => count).reduce((p, c) => p + c),
+    );
     expect(
       result['achievements'].every((achievement) =>
         mockData.international.includes(achievement),
@@ -65,7 +67,9 @@ describe('AchievementsService', () => {
     expect(repository.getAchievementsData).toHaveBeenCalled();
     expect(result).toHaveProperty('count');
     expect(result).toHaveProperty('achievements');
-    expect(result['achievements'].length).toEqual(result['count']);
+    expect(result['count']).toEqual(
+      result['achievements'].map(({ count }) => count).reduce((p, c) => p + c),
+    );
     expect(
       result['achievements'].every((achievement) =>
         mockData.continental.includes(achievement),
@@ -83,7 +87,9 @@ describe('AchievementsService', () => {
     expect(repository.getAchievementsData).toHaveBeenCalled();
     expect(result).toHaveProperty('count');
     expect(result).toHaveProperty('achievements');
-    expect(result['achievements'].length).toEqual(result['count']);
+    expect(result['count']).toEqual(
+      result['achievements'].map(({ count }) => count).reduce((p, c) => p + c),
+    );
     expect(
       result['achievements'].every((achievement) =>
         mockData.national.includes(achievement),
@@ -101,7 +107,9 @@ describe('AchievementsService', () => {
     expect(repository.getAchievementsData).toHaveBeenCalled();
     expect(result).toHaveProperty('count');
     expect(result).toHaveProperty('achievements');
-    expect(result['achievements'].length).toEqual(result['count']);
+    expect(result['count']).toEqual(
+      result['achievements'].map(({ count }) => count).reduce((p, c) => p + c),
+    );
     expect(
       result['achievements'].every((achievement) =>
         mockData.state.includes(achievement),

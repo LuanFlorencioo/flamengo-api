@@ -22,10 +22,9 @@ describe('AchievementsRepository', () => {
     expect(result).toHaveProperty('national');
     expect(result).toHaveProperty('state');
 
-    const { international, continental, national, state } = result;
-    expect(Array.isArray(international)).toBeTruthy();
-    expect(Array.isArray(continental)).toBeTruthy();
-    expect(Array.isArray(national)).toBeTruthy();
-    expect(Array.isArray(state)).toBeTruthy();
+    expect(Array.isArray(result['international'])).toBeTruthy();
+    expect(Array.isArray(result['continental'])).toBeTruthy();
+    expect(Array.isArray(result['national'])).toBeTruthy();
+    expect(Array.isArray(result['state'])).toBeTruthy();
   });
 });
